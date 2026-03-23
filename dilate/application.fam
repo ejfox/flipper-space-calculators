@@ -6,7 +6,7 @@ App(
     name="Dilate",  # Displayed in menus
     apptype=FlipperAppType.EXTERNAL,
     entry_point="dilate_app",
-    stack_size=2 * 1024,
+    stack_size=4 * 1024,
     fap_category="Tools",  # Use "Tools" not "Examples"
     fap_version="1.0",
     fap_icon="dilate.png",  # 10x10 1-bit PNG

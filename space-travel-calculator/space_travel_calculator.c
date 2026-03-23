@@ -290,7 +290,7 @@ static void draw_data_view(Canvas* canvas, AppState* state) {
         const char* arrow = get_burn_direction_arrow(state->current_transfer.departure_angle);
         snprintf(
             line, sizeof(line), "DIR: %s%.0f°", arrow, state->current_transfer.departure_angle);
-        canvas_draw_str(canvas, 2, 64, line);
+        canvas_draw_str(canvas, 2, 62, line);
     } else {
         canvas_draw_str(canvas, 2, 40, "TRANSFER");
         canvas_draw_str(canvas, 2, 50, "IMPRACTICAL");
@@ -333,7 +333,7 @@ static void draw_phase_view(Canvas* canvas, AppState* state) {
 
     // Earth (always at reference position)
     canvas_draw_disc(canvas, 30, 56, 2);
-    canvas_draw_str(canvas, 25, 65, "E");
+    canvas_draw_str(canvas, 25, 63, "E");
 
     // Destination relative to Earth
     double phase_rad = phase_angle * PI_OVER_180;
@@ -380,6 +380,7 @@ int32_t space_travel_calculator_app(void* p) {
 
     // Initialize application state
     AppState* state = malloc(sizeof(AppState));
+    furi_check(state != NULL);
     state->current_view = VIEW_ORBIT;
     state->current_destination = 0; // Start with Mars
     state->current_day = 147; // Optimal Mars transfer window
