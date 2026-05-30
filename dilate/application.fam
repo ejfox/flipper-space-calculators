@@ -6,11 +6,11 @@ App(
     name="Dilate",  # Displayed in menus
     apptype=FlipperAppType.EXTERNAL,
     entry_point="dilate_app",
-    stack_size=4 * 1024,
-    fap_category="Tools",  # Use "Tools" not "Examples"
+    stack_size=8 * 1024,
+    fap_category="Tools",
     fap_version="1.0",
     fap_icon="dilate.png",  # 10x10 1-bit PNG
     fap_description="Time dilation calculator for relativistic travel",
-    fap_author="Space Calculators",
-    fap_icon_assets="images",  # Image assets to compile for this application
+    fap_author="EJ Fox",
+    sources=["dilate.c", "calculations.c"],
 )
